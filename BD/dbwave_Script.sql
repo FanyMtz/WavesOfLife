@@ -4,6 +4,12 @@ CREATE DATABASE dbwaves;
 /*se usa la bd*/
 USE dbwaves;
 
+CREATE TABLE organizador
+(IdOrganizador INT auto_increment NOT NULL,
+ nombre VARCHAR(40) NOT NULL,
+ ubicacion VARCHAR(80) NOT NULL,
+ CONSTRAINT PK_IdOrganizador_ORG PRIMARY KEY (IdOrganizador));
+
 /*creacion de tablas*/
 CREATE TABLE campana
 (IdCampaña INT auto_increment NOT NULL,
@@ -11,8 +17,11 @@ CREATE TABLE campana
  ubicacion VARCHAR(80) NOT NULL,
  hrInicio INT NOT NULL,
  hrFin INT NOT NULL,
- CONSTRAINT PK_IdCampaña_CAM PRIMARY KEY (IdCampaña));
- 
+ IdOrganizador INT NOT NULL,
+ CONSTRAINT PK_IdCampaña_CAM PRIMARY KEY (IdCampaña),
+  CONSTRAINT FK_IdOrganizador_CAM FOREIGN KEY (IdOrganizador) REFERENCES organizador(IdOrganizador));
+  
+ DROP TABLE  campana;
 
 CREATE TABLE voluntario
 (IdVoluntario INT auto_increment NOT NULL,
@@ -27,5 +36,7 @@ CREATE TABLE voluntario
  CONSTRAINT PK_IdVoluntario_VOL PRIMARY KEY (IdVoluntario),
  CONSTRAINT FK_IdCampaña_VOL FOREIGN KEY (IdCampaña) REFERENCES campana(IdCampaña));
  
+  DROP TABLE  voluntario;
+  
  /*creacion de algunos registros*/
 INSERT INTO `campana` ( `nombre`,`ubicacion`,`hrInicio`,`hrInicio`) VALUES ( '?','?',? ,?);
