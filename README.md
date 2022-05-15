@@ -1,6 +1,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-# WavesOfLife
+# <img alt="rename_screenshot" src="/images/logo_wl.png">
+
 <img width="1000" height="350" alt="rename_screenshot" src="/images/playa.jpg">
 
 ## Descripción del proyecto
