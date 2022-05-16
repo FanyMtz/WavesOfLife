@@ -1,4 +1,4 @@
-# WAves of life
+# Waves of life
 
 ## Project setup
 ```
